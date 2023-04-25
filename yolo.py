@@ -20,7 +20,7 @@ from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'model_data/yolo.h5',
+        "model_path": '/kaggle/input/yolov3-model/yolo.h5',
         "anchors_path": '/kaggle/working/keras-yolo3/model_data/yolo_anchors.txt',
         "classes_path": '/kaggle/working/keras-yolo3/model_data/coco_classes.txt',
         "score" : 0.3,
