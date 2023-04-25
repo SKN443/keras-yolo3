@@ -8,7 +8,7 @@ import os
 from timeit import default_timer as timer
 
 import numpy as np
-from tensorflow.compat.v1.keras.backend import backend as K
+import tensorflow.compat.v1 as K
 from keras.models import load_model
 from keras.layers import Input
 from PIL import Image, ImageFont, ImageDraw
@@ -41,7 +41,7 @@ class YOLO(object):
         self.__dict__.update(kwargs) # and update with user overrides
         self.class_names = self._get_class()
         self.anchors = self._get_anchors()
-        self.sess = K.get_session()
+        self.sess = K.Session()
         self.boxes, self.scores, self.classes = self.generate()
 
     def _get_class(self):
