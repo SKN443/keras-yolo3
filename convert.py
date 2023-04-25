@@ -103,7 +103,7 @@ def _main(args):
             activation = cfg_parser[section]['activation']
             batch_normalize = 'batch_normalize' in cfg_parser[section]
 
-            padding = 'same' if pad == 1 and stride == 1 else 'valid'
+            padding = 'same'# if pad == 1 and stride == 1 else 'valid'
 
             # Setting weights.
             # Darknet serializes convolutional weights as:
