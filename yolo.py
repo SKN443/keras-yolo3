@@ -22,7 +22,7 @@ class YOLO(object):
     _defaults = {
         "model_path": '/kaggle/input/yolov3-model/yolo.h5',
         "anchors_path": '/kaggle/working/keras-yolo3/model_data/yolo_anchors.txt',
-        "classes_path": '/kaggle/working/keras-yolo3/model_data/coco_classes.txt',
+        "classes_path": '/kaggle/working/keras-yolo3/model_data/tiny_yolo_anchors.txt',
         "score" : 0.3,
         "iou" : 0.45,
         "model_image_size" : (640, 640),
