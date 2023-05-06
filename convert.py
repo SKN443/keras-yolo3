@@ -177,9 +177,9 @@ def _main(args):
 
             if batch_normalize:
                 conv_layer = (BatchNormalization(
-                    #beta_initializer=bn_weight_list[1],
+                    beta_initializer=keras.initializers.Constant(bn_weight_list[1]),
                     gamma_initializer=bn_weight_list[0], 
-                    beta_initializer=tf.convert_to_tensor(bn_weight_list[1], dtype=tf.float32), 
+                    #beta_initializer=tf.convert_to_tensor(bn_weight_list[1], dtype=tf.float32), 
                     moving_mean_initializer=bn_weight_list[2],
                     moving_variance_initializer=bn_weight_list[3]))(conv_layer)
             prev_layer = conv_layer
