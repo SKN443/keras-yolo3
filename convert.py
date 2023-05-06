@@ -15,7 +15,7 @@ from keras import backend as K
 from keras.layers import (Conv2D, Input, ZeroPadding2D, Add,
                           UpSampling2D, MaxPooling2D, Concatenate)
 from keras.layers import LeakyReLU
-from keras.layers.normalization import BatchNormalization
+from keras.layers import BatchNormalization
 from keras.models import Model
 from keras.regularizers import l2
 from keras.utils.vis_utils import plot_model as plot
@@ -176,7 +176,10 @@ def _main(args):
 
             if batch_normalize:
                 conv_layer = (BatchNormalization(
-                    weights=bn_weight_list))(conv_layer)
+                    gamma_initializer=bn_weight_list[0], 
+                    beta_initializer=bn_weight_list[1], 
+                    moving_mean_initializer=bn_weight_list[2],
+                    moving_variance_initializer=bn_weight_list[3]))(conv_layer)
             prev_layer = conv_layer
 
             if activation == 'linear':
