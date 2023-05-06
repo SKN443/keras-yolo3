@@ -9,6 +9,7 @@ import configparser
 import io
 import os
 import tensorflow as tf
+from tensorflow import keras
 from collections import defaultdict
 
 import numpy as np
